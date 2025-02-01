@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+            background-color: pink;
+        }
+        .button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #image-container {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        #text-container {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .heart {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my valentine? <span class="heart">❤</span></h1>
+    <button class="button" onclick="showImage('yes')">Yes</button>
+    <button class="button" onclick="showImage('no')">No</button>
+    <div id="image-container"></div>
+    <div id="text-container"></div>
+
+    <script>
+        function showImage(answer) {
+            var imgContainer = document.getElementById("image-container");
+            var textContainer = document.getElementById("text-container");
+            imgContainer.innerHTML = "";
+            textContainer.innerHTML = "";
+            var img = document.createElement("img");
+            
+            if (answer === 'yes') {
+                img.src = "money-itch.gif";
+                textContainer.textContent = "Daddy knew it!";
+            } else {
+                img.src = "ew-nope.gif";
+                textContainer.textContent = "Suck my ass!";
+            }
+            imgContainer.appendChild(img);
+        }
+    </script>
+</body>
+</html>
